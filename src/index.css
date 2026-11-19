@@ -3,55 +3,87 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: dark;
+  }
+
   html {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #070a12;
+    color: #f1f5f9;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.02em;
   }
 }
 
-/* Custom background patterns and glassmorphism */
-.bg-mesh {
+/* Ambient glow & backdrop effects */
+.bg-mesh-dark {
+  background-color: #070a12;
   background-image: 
-    radial-gradient(at 0% 0%, rgba(2, 132, 199, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.12) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(30, 41, 59, 0.5) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.10) 0px, transparent 45%),
+    radial-gradient(at 50% 50%, rgba(2, 132, 199, 0.05) 0px, transparent 60%),
+    radial-gradient(at 100% 100%, rgba(239, 68, 68, 0.07) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(15, 23, 42, 0.8) 0px, transparent 50%);
 }
 
+/* Carbon grid texture */
+.bg-carbon-texture {
+  background-color: #070a12;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Premium glass card styles */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(11, 16, 28, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-card {
-  background: rgba(30, 41, 59, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(15, 23, 40, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .glass-card-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .glass-card-hover:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   border-color: rgba(56, 189, 248, 0.4);
-  box-shadow: 0 12px 30px -10px rgba(2, 132, 199, 0.25);
+  box-shadow: 0 16px 36px -12px rgba(14, 165, 233, 0.22);
 }
 
-/* Automotive carbon grid texture simulation */
-.bg-carbon {
-  background-color: #0b1120;
-  background-image: 
-    linear-gradient(45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%), 
-    linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%), 
-    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.02) 75%), 
-    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.02) 75%);
-  background-size: 16px 16px;
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070a12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f3050;
+  border-radius: 9999px;
+  border: 2px solid #070a12;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Custom badge glow */
+.badge-glow {
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
 }

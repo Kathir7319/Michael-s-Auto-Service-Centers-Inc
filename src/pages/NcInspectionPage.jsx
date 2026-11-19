@@ -32,12 +32,13 @@ export default function NcInspectionPage() {
   const allItemsChecked = NC_INSPECTION_GUIDELINES.checklist.every((_, i) => checkedItems[i]);
 
   return (
-    <div className="space-y-16 lg:space-y-24 py-10">
+    <div className="space-y-16 lg:space-y-24 py-12 bg-obsidian-950 text-slate-100">
+      
       {/* Header Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-800 text-xs font-bold text-emerald-400 uppercase tracking-wider">
-            <ShieldCheck className="w-4 h-4" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-800 text-xs font-bold text-emerald-400 uppercase tracking-wider">
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
             NCDMV Certified Official Station #38192-S
           </div>
           
@@ -46,18 +47,18 @@ export default function NcInspectionPage() {
           </h1>
           
           {/* Introductory Text (Verbatim from Word Document) */}
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
             Clayton Auto Repair is a certified North Carolina Official Inspection Station. Avoid long lines and stay street-legal by understanding requirements ahead of time.
           </p>
 
-          <div className="pt-2 flex flex-wrap justify-center gap-4 text-xs font-semibold text-slate-300">
-            <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800">
+          <div className="pt-2 flex flex-wrap justify-center gap-3 text-xs font-semibold text-slate-300">
+            <span className="px-3.5 py-1.5 rounded-xl bg-obsidian-900 border border-obsidian-800">
               ⚡ Safety & Emissions OBD-II Certified
             </span>
-            <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800">
+            <span className="px-3.5 py-1.5 rounded-xl bg-obsidian-900 border border-obsidian-800">
               📍 420 E Main St, Clayton, NC
             </span>
-            <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800">
+            <span className="px-3.5 py-1.5 rounded-xl bg-obsidian-900 border border-obsidian-800">
               ⏱ Express Bay: 15–25 Mins
             </span>
           </div>
@@ -66,10 +67,10 @@ export default function NcInspectionPage() {
 
       {/* INSPECTION OPERATING HOURS & STRICT CUTOFF POLICY BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl p-6 sm:p-10 bg-gradient-to-r from-amber-950/70 via-slate-900 to-slate-950 border-2 border-amber-500/40 shadow-2xl relative overflow-hidden">
+        <div className="rounded-3xl p-6 sm:p-10 bg-gradient-to-r from-obsidian-900 via-obsidian-850 to-obsidian-900 border-2 border-amber-500/40 shadow-2xl relative overflow-hidden">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="space-y-4 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-500/30">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-500/30">
                 <Clock className="w-3.5 h-3.5" />
                 State Mandated Operating Hours
               </div>
@@ -80,7 +81,7 @@ export default function NcInspectionPage() {
               </h2>
 
               <div className="text-slate-200 text-base space-y-2">
-                <p className="font-semibold text-lg text-amber-400">
+                <p className="font-bold text-lg text-amber-400">
                   • Monday – Friday: 8:00 AM – 4:30 PM (No inspections started after 4:30 PM)
                 </p>
                 <p className="text-slate-300 text-sm leading-relaxed">
@@ -88,16 +89,16 @@ export default function NcInspectionPage() {
                 </p>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-slate-950/70 border border-amber-500/30 text-xs text-amber-200 flex items-start gap-2.5">
+              <div className="p-4 rounded-2xl bg-obsidian-950/80 border border-amber-500/30 text-xs text-amber-200/90 flex items-start gap-3">
                 <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                 <span>
-                  <strong>Why 4:30 PM Cutoff?</strong> The North Carolina State DMV electronic inspection portal process takes 20+ minutes and server connectivity halts right at 5:00 PM. Our 4:30 PM cutoff ensures your vehicle completes certification without system timeouts.
+                  <strong className="text-amber-300">Why the 4:30 PM Cutoff?</strong> The North Carolina State DMV electronic inspection portal process takes 20+ minutes and server connectivity halts right at 5:00 PM. Our 4:30 PM cutoff ensures your vehicle completes certification without system timeouts.
                 </span>
               </div>
             </div>
 
             {/* Quick Action Box */}
-            <div className="p-6 rounded-2xl bg-slate-900/90 border border-slate-700/80 space-y-4 shrink-0 text-center lg:w-80 shadow-xl">
+            <div className="p-6 sm:p-8 rounded-3xl bg-obsidian-950 border border-obsidian-800 space-y-4 shrink-0 text-center lg:w-80 shadow-2xl">
               <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">
                 Skip The Waiting Line
               </p>
@@ -106,13 +107,13 @@ export default function NcInspectionPage() {
               </p>
               <Link
                 to="/appointment?service=nc-inspection"
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 transition-colors shadow-lg shadow-amber-500/20"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-extrabold text-obsidian-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 transition-all shadow-lg shadow-amber-500/20"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Schedule Express Slot</span>
               </Link>
               <p className="text-[11px] text-slate-400">
-                Walk-ins always welcome until 4:30 PM
+                Walk-ins welcomed until 4:30 PM
               </p>
             </div>
           </div>
@@ -124,7 +125,7 @@ export default function NcInspectionPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           <div className="lg:col-span-5 space-y-4">
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-sky-400 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
               <FileText className="w-4 h-4" />
               Pre-Inspection Checklist
             </div>
@@ -135,18 +136,18 @@ export default function NcInspectionPage() {
               To keep your inspection under 20 minutes, make sure you have these three essential documents ready before pulling into our bay.
             </p>
 
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-400 space-y-2">
-              <p className="font-semibold text-white flex items-center gap-1.5">
+            <div className="p-4 rounded-2xl bg-obsidian-900 border border-obsidian-800 text-xs text-slate-400 space-y-2">
+              <p className="font-bold text-white flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
                 Interactive Check-Off:
               </p>
-              <p>Click each document below to make sure you have everything in your glovebox or wallet!</p>
+              <p>Click each document below to verify you have everything in your glovebox or wallet!</p>
             </div>
 
             {allItemsChecked && (
-              <div className="p-4 rounded-xl bg-emerald-950/70 border border-emerald-800 text-xs text-emerald-300 flex items-center gap-2 animate-fadeIn">
+              <div className="p-4 rounded-2xl bg-emerald-950/70 border border-emerald-800 text-xs text-emerald-300 flex items-center gap-2.5 animate-fadeIn">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                <span>You're 100% ready! Drop by or book your express time slot below.</span>
+                <span>You're 100% prepared! Drop by or reserve your express slot below.</span>
               </div>
             )}
           </div>
@@ -166,21 +167,21 @@ export default function NcInspectionPage() {
                   onClick={() => toggleCheck(idx)}
                   className={`cursor-pointer rounded-2xl p-5 border transition-all flex items-start gap-4 ${
                     isChecked
-                      ? 'bg-sky-950/50 border-sky-500 shadow-md'
-                      : 'bg-slate-900/80 border-slate-800 hover:border-slate-700 hover:bg-slate-850'
+                      ? 'bg-obsidian-850 border-emerald-500/60 shadow-lg'
+                      : 'bg-obsidian-900/80 border-obsidian-800 hover:border-obsidian-700 hover:bg-obsidian-850'
                   }`}
                 >
                   <div className="pt-0.5">
                     <div className={`w-6 h-6 rounded-lg border flex items-center justify-center transition-colors ${
                       isChecked 
-                        ? 'bg-sky-500 border-sky-400 text-white' 
-                        : 'border-slate-600 bg-slate-800'
+                        ? 'bg-emerald-500 border-emerald-400 text-obsidian-950 font-bold' 
+                        : 'border-obsidian-700 bg-obsidian-950'
                     }`}>
                       {isChecked && <CheckCircle2 className="w-4 h-4" />}
                     </div>
                   </div>
 
-                  <div className="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60 shrink-0">
+                  <div className="p-2.5 rounded-xl bg-obsidian-950 border border-obsidian-800 shrink-0">
                     {getDocIcon(idx)}
                   </div>
 
@@ -188,11 +189,11 @@ export default function NcInspectionPage() {
                     <div className="flex items-center justify-between">
                       {/* Verbatim list items from document */}
                       <h3 className={`text-base font-bold font-heading transition-colors ${
-                        isChecked ? 'text-sky-300 line-through' : 'text-white'
+                        isChecked ? 'text-emerald-300 line-through' : 'text-white'
                       }`}>
                         {idx + 1}. {item.item}
                       </h3>
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">
                         Required
                       </span>
                     </div>
@@ -210,7 +211,7 @@ export default function NcInspectionPage() {
 
       {/* WHAT GETS TESTED: SAFETY & EMISSIONS BREAKDOWN */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-900/80 rounded-3xl border border-slate-800 p-8 sm:p-10 space-y-8 shadow-xl">
+        <div className="bg-obsidian-900/90 rounded-3xl border border-obsidian-800 p-8 sm:p-10 space-y-8 shadow-2xl">
           <div className="max-w-2xl">
             <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
               Official North Carolina Inspection Scope
@@ -222,7 +223,7 @@ export default function NcInspectionPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {NC_INSPECTION_GUIDELINES.testingComponents.map((comp, idx) => (
-              <div key={idx} className="p-5 rounded-xl bg-slate-950/60 border border-slate-800/80 space-y-2">
+              <div key={idx} className="p-5 rounded-2xl bg-obsidian-950/70 border border-obsidian-800 space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
                   <h4 className="text-sm font-bold text-white font-heading">{comp.name}</h4>
@@ -235,14 +236,14 @@ export default function NcInspectionPage() {
           </div>
 
           {/* Pricing Banner */}
-          <div className="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+          <div className="pt-4 border-t border-obsidian-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
             <div>
               <span className="text-white font-semibold">State Mandated Inspection Fees: </span>
               <span className="text-amber-400 font-bold">$30.00</span> for Safety + Emissions (OBD-II) | <span className="text-amber-400 font-bold">$13.60</span> for Safety-Only (Vehicles 20+ years old)
             </div>
             <Link
               to="/appointment?service=nc-inspection"
-              className="px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold transition-colors"
+              className="px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-obsidian-950 font-extrabold transition-colors"
             >
               Lock in Express Slot
             </Link>
@@ -269,12 +270,12 @@ export default function NcInspectionPage() {
           {NC_INSPECTION_GUIDELINES.faqs.map((faq, idx) => (
             <div
               key={idx}
-              className="rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden transition-all"
+              className="rounded-2xl bg-obsidian-900/80 border border-obsidian-800 overflow-hidden transition-all"
             >
               <button
                 type="button"
                 onClick={() => setOpenFaq(openFaq === idx ? -1 : idx)}
-                className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-slate-850 transition-colors"
+                className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-obsidian-850 transition-colors"
               >
                 <span className="font-bold text-white text-sm sm:text-base">
                   {faq.q}
@@ -286,7 +287,7 @@ export default function NcInspectionPage() {
                 />
               </button>
               {openFaq === idx && (
-                <div className="px-5 pb-5 pt-1 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 bg-slate-950/40">
+                <div className="px-5 pb-5 pt-1 text-sm text-slate-300 leading-relaxed border-t border-obsidian-800/80 bg-obsidian-950/40">
                   {faq.a}
                 </div>
               )}
@@ -296,8 +297,8 @@ export default function NcInspectionPage() {
       </section>
 
       {/* BOTTOM CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="text-center rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-slate-900 to-sky-950/70 border border-slate-800 space-y-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+        <div className="text-center rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-obsidian-900 via-obsidian-850 to-obsidian-900 border border-amber-500/30 space-y-6">
           <h2 className="text-2xl sm:text-4xl font-extrabold font-heading text-white">
             Ready for Your Official NC State Inspection?
           </h2>
@@ -307,13 +308,13 @@ export default function NcInspectionPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/appointment?service=nc-inspection"
-              className="px-8 py-3.5 rounded-xl text-base font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 transition-colors shadow-lg"
+              className="px-8 py-3.5 rounded-xl text-base font-extrabold text-obsidian-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 transition-colors shadow-xl shadow-amber-500/25"
             >
               Lock in Express Slot Online
             </Link>
             <a
               href={`tel:${COMPANY_INFO.phoneRaw}`}
-              className="px-6 py-3.5 rounded-xl text-base font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors"
+              className="px-6 py-3.5 rounded-xl text-base font-semibold text-white bg-obsidian-800 hover:bg-obsidian-750 border border-obsidian-700 transition-colors"
             >
               Call (919) 553-7300
             </a>

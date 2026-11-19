@@ -154,7 +154,7 @@ export default function AppointmentPage() {
   const handleNext = () => {
     if (validateStep(currentStep)) {
       setCurrentStep(prev => prev + 1);
-      window.scrollTo({ top: 300, behavior: 'smooth' });
+      window.scrollTo({ top: 250, behavior: 'smooth' });
     }
   };
 
@@ -178,8 +178,8 @@ export default function AppointmentPage() {
     // Trigger celebration confetti
     try {
       confetti({
-        particleCount: 100,
-        spread: 70,
+        particleCount: 120,
+        spread: 80,
         origin: { y: 0.6 }
       });
     } catch (err) {
@@ -190,18 +190,19 @@ export default function AppointmentPage() {
   const selectedServiceObj = serviceOptions.find(s => s.id === formData.serviceType) || serviceOptions[0];
 
   return (
-    <div className="space-y-12 py-10">
+    <div className="space-y-12 py-12 bg-obsidian-950 text-slate-100">
+      
       {/* Intro Header */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-400 uppercase tracking-wider">
-          <CalendarIcon className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-obsidian-900 border border-amber-500/30 text-xs font-bold text-amber-400 uppercase tracking-wider">
+          <CalendarIcon className="w-3.5 h-3.5 text-amber-400" />
           Frictionless Online Scheduler
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
           Schedule Your Service Window
         </h1>
         {/* Verbatim copy from Word Document */}
-        <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal">
           Skip the phone tag. Fill out our multi-step secure form below to reserve an explicit service window at our Main Street location. Our service advisor will text or email confirmation within minutes.
         </p>
       </section>
@@ -209,10 +210,10 @@ export default function AppointmentPage() {
       {/* Main Booking Container */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {!isSubmitted ? (
-          <div className="bg-slate-900/90 rounded-3xl border border-slate-800 p-6 sm:p-10 shadow-2xl space-y-8">
+          <div className="bg-obsidian-900/90 rounded-3xl border border-obsidian-800 p-6 sm:p-10 shadow-2xl space-y-8">
             
             {/* Step Progress Indicator (Steps 1 to 5) */}
-            <div className="border-b border-slate-800 pb-6">
+            <div className="border-b border-obsidian-800 pb-6">
               <div className="flex items-center justify-between max-w-2xl mx-auto">
                 {[
                   { num: 1, label: 'Service' },
@@ -222,16 +223,16 @@ export default function AppointmentPage() {
                   { num: 5, label: 'Confirm' }
                 ].map((s) => (
                   <div key={s.num} className="flex flex-col items-center">
-                    <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm transition-all ${
+                    <div className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm transition-all ${
                       currentStep === s.num
-                        ? 'bg-amber-400 text-slate-950 ring-4 ring-amber-400/20 shadow-lg'
+                        ? 'bg-amber-400 text-obsidian-950 ring-4 ring-amber-400/20 shadow-lg shadow-amber-500/20'
                         : currentStep > s.num
-                        ? 'bg-sky-500 text-white'
-                        : 'bg-slate-800 text-slate-400 border border-slate-700'
+                        ? 'bg-emerald-500 text-obsidian-950 font-extrabold'
+                        : 'bg-obsidian-950 text-slate-500 border border-obsidian-800'
                     }`}>
-                      {currentStep > s.num ? <Check className="w-4 h-4" /> : s.num}
+                      {currentStep > s.num ? <Check className="w-5 h-5" /> : s.num}
                     </div>
-                    <span className={`text-[10px] sm:text-xs font-semibold mt-1.5 hidden sm:block ${
+                    <span className={`text-[10px] sm:text-xs font-semibold mt-2 hidden sm:block ${
                       currentStep === s.num ? 'text-amber-400 font-bold' : 'text-slate-400'
                     }`}>
                       {s.label}
@@ -264,7 +265,7 @@ export default function AppointmentPage() {
                       name="serviceType"
                       value={formData.serviceType}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm font-semibold"
+                      className="w-full px-4 py-3.5 rounded-2xl bg-obsidian-950 border border-obsidian-750 text-white focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm font-semibold"
                     >
                       <option value="nc-inspection">NC Inspection (Safety & Emissions Official)</option>
                       <option value="brakes">Brakes (Inspection, Pads & Rotors)</option>
@@ -283,25 +284,25 @@ export default function AppointmentPage() {
                         <div
                           key={serv.id}
                           onClick={() => setFormData(p => ({ ...p, serviceType: serv.id }))}
-                          className={`cursor-pointer p-4 rounded-xl border transition-all flex items-start gap-3.5 ${
+                          className={`cursor-pointer p-4 rounded-2xl border transition-all flex items-start gap-3.5 ${
                             isSelected
-                              ? 'bg-amber-400/10 border-amber-400 shadow-md ring-1 ring-amber-400/30'
-                              : 'bg-slate-950/60 border-slate-800 hover:border-slate-700 hover:bg-slate-800/40'
+                              ? 'bg-obsidian-850 border-amber-400/80 shadow-lg shadow-amber-500/10 ring-1 ring-amber-400/30'
+                              : 'bg-obsidian-950/70 border-obsidian-800 hover:border-obsidian-700 hover:bg-obsidian-850/60'
                           }`}
                         >
-                          <div className={`p-2.5 rounded-lg shrink-0 ${
-                            isSelected ? 'bg-amber-400 text-slate-950' : 'bg-slate-800 text-slate-300'
+                          <div className={`p-2.5 rounded-xl shrink-0 ${
+                            isSelected ? 'bg-amber-400 text-obsidian-950' : 'bg-obsidian-900 text-slate-300 border border-obsidian-800'
                           }`}>
                             <IconComp className="w-5 h-5" />
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center justify-between">
                               <p className="text-sm font-bold text-white">{serv.label}</p>
-                              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-800 text-amber-400 border border-slate-700">
+                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-obsidian-900 text-amber-400 border border-obsidian-700">
                                 {serv.badge}
                               </span>
                             </div>
-                            <p className="text-xs text-slate-400 mt-0.5">{serv.desc}</p>
+                            <p className="text-xs text-slate-400 mt-1">{serv.desc}</p>
                           </div>
                         </div>
                       );
@@ -318,8 +319,8 @@ export default function AppointmentPage() {
                       value={formData.serviceNotes}
                       onChange={handleChange}
                       rows={2}
-                      placeholder="e.g. Squeaking noise when braking at low speed, or AC blows warm while stopped at red lights..."
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm"
+                      placeholder="e.g. Squeaking noise when braking, or AC blowing ambient air at stoplights..."
+                      className="w-full px-4 py-3 rounded-2xl bg-obsidian-950 border border-obsidian-750 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm"
                     />
                   </div>
                 </div>
@@ -350,11 +351,11 @@ export default function AppointmentPage() {
                         min="1980"
                         max="2026"
                         placeholder="e.g. 2021"
-                        className={`w-full px-4 py-3 rounded-xl bg-slate-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
-                          errors.year ? 'border-rose-500' : 'border-slate-700'
+                        className={`w-full px-4 py-3 rounded-2xl bg-obsidian-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
+                          errors.year ? 'border-racing-500' : 'border-obsidian-750'
                         }`}
                       />
-                      {errors.year && <p className="text-xs text-rose-400">{errors.year}</p>}
+                      {errors.year && <p className="text-xs text-racing-400">{errors.year}</p>}
                     </div>
 
                     {/* Make */}
@@ -368,11 +369,11 @@ export default function AppointmentPage() {
                         value={formData.make}
                         onChange={handleChange}
                         placeholder="e.g. Ford, Toyota, Chevrolet, Honda"
-                        className={`w-full px-4 py-3 rounded-xl bg-slate-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
-                          errors.make ? 'border-rose-500' : 'border-slate-700'
+                        className={`w-full px-4 py-3 rounded-2xl bg-obsidian-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
+                          errors.make ? 'border-racing-500' : 'border-obsidian-750'
                         }`}
                       />
-                      {errors.make && <p className="text-xs text-rose-400">{errors.make}</p>}
+                      {errors.make && <p className="text-xs text-racing-400">{errors.make}</p>}
                     </div>
 
                     {/* Model */}
@@ -386,11 +387,11 @@ export default function AppointmentPage() {
                         value={formData.model}
                         onChange={handleChange}
                         placeholder="e.g. F-150, Camry, Silverado, Civic"
-                        className={`w-full px-4 py-3 rounded-xl bg-slate-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
-                          errors.model ? 'border-rose-500' : 'border-slate-700'
+                        className={`w-full px-4 py-3 rounded-2xl bg-obsidian-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
+                          errors.model ? 'border-racing-500' : 'border-obsidian-750'
                         }`}
                       />
-                      {errors.model && <p className="text-xs text-rose-400">{errors.model}</p>}
+                      {errors.model && <p className="text-xs text-racing-400">{errors.model}</p>}
                     </div>
 
                     {/* Approximate Mileage */}
@@ -404,11 +405,11 @@ export default function AppointmentPage() {
                         value={formData.mileage}
                         onChange={handleChange}
                         placeholder="e.g. 64,500"
-                        className={`w-full px-4 py-3 rounded-xl bg-slate-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
-                          errors.mileage ? 'border-rose-500' : 'border-slate-700'
+                        className={`w-full px-4 py-3 rounded-2xl bg-obsidian-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
+                          errors.mileage ? 'border-racing-500' : 'border-obsidian-750'
                         }`}
                       />
-                      {errors.mileage && <p className="text-xs text-rose-400">{errors.mileage}</p>}
+                      {errors.mileage && <p className="text-xs text-racing-400">{errors.mileage}</p>}
                     </div>
                   </div>
                 </div>
@@ -421,7 +422,7 @@ export default function AppointmentPage() {
                     <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">Step 3 of 5</span>
                     <h2 className="text-2xl font-bold font-heading text-white">Choose Date & Time</h2>
                     <p className="text-xs sm:text-sm text-slate-400">
-                      Interactive Calendar Matrix with real-time bay slot availability.
+                      Interactive Calendar Matrix with real-time slot selection.
                     </p>
                   </div>
 
@@ -438,14 +439,14 @@ export default function AppointmentPage() {
                             type="button"
                             key={item.dateStr}
                             onClick={() => setFormData(p => ({ ...p, selectedDate: item.dateStr }))}
-                            className={`p-3 rounded-xl border text-center transition-all ${
+                            className={`p-3.5 rounded-2xl border text-center transition-all ${
                               isDateSelected
-                                ? 'bg-amber-400 text-slate-950 font-bold border-amber-400 shadow-md'
-                                : 'bg-slate-950 border-slate-800 text-slate-300 hover:border-slate-600'
+                                ? 'bg-amber-400 text-obsidian-950 font-bold border-amber-400 shadow-lg shadow-amber-500/25 ring-2 ring-amber-400/30'
+                                : 'bg-obsidian-950 border-obsidian-800 text-slate-300 hover:border-obsidian-700'
                             }`}
                           >
-                            <p className="text-xs uppercase">{item.dayName}</p>
-                            <p className="text-sm font-extrabold mt-0.5">{item.monthDay}</p>
+                            <p className="text-[11px] uppercase tracking-wider">{item.dayName}</p>
+                            <p className="text-sm font-extrabold mt-1">{item.monthDay}</p>
                           </button>
                         );
                       })}
@@ -455,7 +456,7 @@ export default function AppointmentPage() {
                   {/* Time Matrix */}
                   <div className="space-y-2 pt-2">
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-300">
-                      Select Explicit Window:
+                      Select Explicit Service Window:
                     </label>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                       {timeSlots.map((slot) => {
@@ -465,17 +466,17 @@ export default function AppointmentPage() {
                             type="button"
                             key={slot.time}
                             onClick={() => setFormData(p => ({ ...p, selectedTimeSlot: slot.time }))}
-                            className={`p-3 rounded-xl border text-left transition-all ${
+                            className={`p-3.5 rounded-2xl border text-left transition-all ${
                               isSlotSelected
-                                ? 'bg-sky-500 text-slate-950 font-bold border-sky-400 shadow-md'
-                                : 'bg-slate-950 border-slate-800 text-slate-300 hover:border-slate-700'
+                                ? 'bg-amber-400 text-obsidian-950 font-extrabold border-amber-400 shadow-lg shadow-amber-500/25'
+                                : 'bg-obsidian-950 border-obsidian-800 text-slate-300 hover:border-obsidian-700'
                             }`}
                           >
                             <p className="text-sm font-bold flex items-center justify-between">
                               <span>{slot.time}</span>
                               <Clock className="w-3.5 h-3.5" />
                             </p>
-                            <p className={`text-[10px] mt-0.5 ${isSlotSelected ? 'text-slate-900 font-semibold' : 'text-slate-400'}`}>
+                            <p className={`text-[10px] mt-0.5 ${isSlotSelected ? 'text-obsidian-900 font-semibold' : 'text-slate-400'}`}>
                               {slot.tag}
                             </p>
                           </button>
@@ -485,12 +486,12 @@ export default function AppointmentPage() {
                   </div>
 
                   {/* Drop-off preference */}
-                  <div className="p-4 rounded-xl bg-slate-950/70 border border-slate-800 space-y-2">
+                  <div className="p-4 rounded-2xl bg-obsidian-950/80 border border-obsidian-800 space-y-2">
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-300">
                       While Your Vehicle Is Serviced:
                     </label>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                      <label className="flex items-center gap-2 p-2 rounded-lg bg-slate-900 border border-slate-800 cursor-pointer">
+                      <label className="flex items-center gap-2 p-2.5 rounded-xl bg-obsidian-900 border border-obsidian-800 cursor-pointer">
                         <input
                           type="radio"
                           name="dropOffPreference"
@@ -499,9 +500,9 @@ export default function AppointmentPage() {
                           onChange={handleChange}
                           className="text-amber-400 focus:ring-amber-400"
                         />
-                        <span className="text-white">I'll drop off & walk to Downtown cafes</span>
+                        <span className="text-white font-medium">I'll drop off & walk to Downtown cafes</span>
                       </label>
-                      <label className="flex items-center gap-2 p-2 rounded-lg bg-slate-900 border border-slate-800 cursor-pointer">
+                      <label className="flex items-center gap-2 p-2.5 rounded-xl bg-obsidian-900 border border-obsidian-800 cursor-pointer">
                         <input
                           type="radio"
                           name="dropOffPreference"
@@ -510,7 +511,7 @@ export default function AppointmentPage() {
                           onChange={handleChange}
                           className="text-amber-400 focus:ring-amber-400"
                         />
-                        <span className="text-white">I'll wait in the Wi-Fi customer lounge</span>
+                        <span className="text-white font-medium">I'll wait in the Wi-Fi customer lounge</span>
                       </label>
                     </div>
                   </div>
@@ -542,12 +543,12 @@ export default function AppointmentPage() {
                           value={formData.fullName}
                           onChange={handleChange}
                           placeholder="e.g. Robert Miller"
-                          className={`w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
-                            errors.fullName ? 'border-rose-500' : 'border-slate-700'
+                          className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-obsidian-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
+                            errors.fullName ? 'border-racing-500' : 'border-obsidian-750'
                           }`}
                         />
                       </div>
-                      {errors.fullName && <p className="text-xs text-rose-400">{errors.fullName}</p>}
+                      {errors.fullName && <p className="text-xs text-racing-400">{errors.fullName}</p>}
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -564,12 +565,12 @@ export default function AppointmentPage() {
                             value={formData.phoneNumber}
                             onChange={handleChange}
                             placeholder="e.g. (919) 555-0199"
-                            className={`w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
-                              errors.phoneNumber ? 'border-rose-500' : 'border-slate-700'
+                            className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-obsidian-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
+                              errors.phoneNumber ? 'border-racing-500' : 'border-obsidian-750'
                             }`}
                           />
                         </div>
-                        {errors.phoneNumber && <p className="text-xs text-rose-400">{errors.phoneNumber}</p>}
+                        {errors.phoneNumber && <p className="text-xs text-racing-400">{errors.phoneNumber}</p>}
                       </div>
 
                       {/* Email Address */}
@@ -585,24 +586,24 @@ export default function AppointmentPage() {
                             value={formData.emailAddress}
                             onChange={handleChange}
                             placeholder="e.g. robert@gmail.com"
-                            className={`w-full pl-10 pr-4 py-3 rounded-xl bg-slate-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
-                              errors.emailAddress ? 'border-rose-500' : 'border-slate-700'
+                            className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-obsidian-950 border text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 ${
+                              errors.emailAddress ? 'border-racing-500' : 'border-obsidian-750'
                             }`}
                           />
                         </div>
-                        {errors.emailAddress && <p className="text-xs text-rose-400">{errors.emailAddress}</p>}
+                        {errors.emailAddress && <p className="text-xs text-racing-400">{errors.emailAddress}</p>}
                       </div>
                     </div>
 
                     {/* SMS updates opt-in check (Explicit wireframe requirement) */}
-                    <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex items-start gap-3">
+                    <div className="p-4 rounded-2xl bg-obsidian-950 border border-obsidian-800 flex items-start gap-3">
                       <input
                         type="checkbox"
                         id="smsOptIn"
                         name="smsOptIn"
                         checked={formData.smsOptIn}
                         onChange={handleChange}
-                        className="w-4 h-4 mt-0.5 rounded text-amber-400 focus:ring-amber-400 bg-slate-900 border-slate-700"
+                        className="w-4 h-4 mt-0.5 rounded text-amber-400 focus:ring-amber-400 bg-obsidian-900 border-obsidian-700"
                       />
                       <label htmlFor="smsOptIn" className="text-xs text-slate-300 cursor-pointer">
                         <strong className="text-white">[SMS updates opt-in]</strong> Send me real-time SMS text updates when my vehicle check-in starts, inspection finishes, and digital estimates are ready.
@@ -623,11 +624,11 @@ export default function AppointmentPage() {
                     </p>
                   </div>
 
-                  <div className="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-4 text-sm">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b border-slate-800">
+                  <div className="p-6 rounded-3xl bg-obsidian-950 border border-obsidian-800 space-y-4 text-sm">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b border-obsidian-800">
                       <div>
                         <p className="text-xs text-slate-400">Selected Service:</p>
-                        <p className="font-bold text-amber-400 text-base">{selectedServiceObj.label}</p>
+                        <p className="font-extrabold text-amber-400 text-base">{selectedServiceObj.label}</p>
                         <p className="text-xs text-slate-300">{selectedServiceObj.desc}</p>
                       </div>
                       <div>
@@ -639,10 +640,10 @@ export default function AppointmentPage() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b border-slate-800">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b border-obsidian-800">
                       <div>
                         <p className="text-xs text-slate-400">Service Window:</p>
-                        <p className="font-bold text-sky-400 text-base">
+                        <p className="font-extrabold text-sky-400 text-base">
                           {formData.selectedDate} at {formData.selectedTimeSlot}
                         </p>
                         <p className="text-xs text-slate-300">{formData.dropOffPreference}</p>
@@ -652,7 +653,7 @@ export default function AppointmentPage() {
                         <p className="font-bold text-white text-base">{formData.fullName}</p>
                         <p className="text-xs text-slate-300">{formData.phoneNumber} • {formData.emailAddress}</p>
                         {formData.smsOptIn && (
-                          <span className="inline-block mt-1 text-[10px] font-bold text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2 py-0.5 rounded">
+                          <span className="inline-block mt-1 text-[10px] font-bold text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2 py-0.5 rounded-full">
                             ✓ SMS Updates Enabled
                           </span>
                         )}
@@ -669,25 +670,25 @@ export default function AppointmentPage() {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full py-4 px-6 rounded-xl text-base font-extrabold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:from-amber-300 hover:to-amber-400 shadow-xl shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                      className="w-full py-4 px-6 rounded-2xl text-base font-extrabold text-obsidian-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:from-amber-300 hover:to-amber-400 shadow-xl shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
                     >
-                      <Sparkles className="w-5 h-5 text-slate-950" />
+                      <Sparkles className="w-5 h-5 text-obsidian-950" />
                       <span>Secure Confirmation & Book Now</span>
                     </button>
                     <p className="text-[11px] text-center text-slate-400 mt-2">
-                      🔒 No payment required now. Pay securely upon pickup after reviewing your itemized invoice.
+                      🔒 No payment required now. Pay upon pickup after reviewing your itemized invoice.
                     </p>
                   </div>
                 </div>
               )}
 
               {/* Step Navigation Controls */}
-              <div className="flex items-center justify-between pt-6 border-t border-slate-800">
+              <div className="flex items-center justify-between pt-6 border-t border-obsidian-800">
                 {currentStep > 1 ? (
                   <button
                     type="button"
                     onClick={handleBack}
-                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold text-slate-300 bg-slate-800 hover:bg-slate-700 transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold text-slate-300 bg-obsidian-800 hover:bg-obsidian-750 transition-colors"
                   >
                     <ArrowLeft className="w-4 h-4" />
                     <span>Back</span>
@@ -698,7 +699,7 @@ export default function AppointmentPage() {
                   <button
                     type="button"
                     onClick={handleNext}
-                    className="inline-flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-xs font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 transition-colors shadow-md"
+                    className="inline-flex items-center gap-1.5 px-6 py-2.5 rounded-xl text-xs font-extrabold text-obsidian-950 bg-amber-400 hover:bg-amber-300 transition-colors shadow-md"
                   >
                     <span>Next: {
                       currentStep === 1 ? 'Vehicle Details' :
@@ -714,7 +715,7 @@ export default function AppointmentPage() {
           </div>
         ) : (
           /* CONFIRMATION SCREEN */
-          <div className="bg-slate-900/95 rounded-3xl border border-emerald-500/40 p-8 sm:p-12 shadow-2xl text-center space-y-6 animate-fadeIn">
+          <div className="bg-obsidian-900/95 rounded-3xl border border-emerald-500/40 p-8 sm:p-12 shadow-2xl text-center space-y-6 animate-fadeIn">
             <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-9 h-9" />
             </div>
@@ -732,20 +733,20 @@ export default function AppointmentPage() {
             </div>
 
             {/* Ticket Card */}
-            <div className="max-w-md mx-auto p-5 rounded-2xl bg-slate-950 border border-slate-800 text-left text-xs space-y-3">
-              <div className="flex justify-between border-b border-slate-800 pb-2">
+            <div className="max-w-md mx-auto p-5 rounded-2xl bg-obsidian-950 border border-obsidian-800 text-left text-xs space-y-3">
+              <div className="flex justify-between border-b border-obsidian-800 pb-2">
                 <span className="text-slate-400">Service:</span>
                 <span className="font-bold text-white">{selectedServiceObj.label}</span>
               </div>
-              <div className="flex justify-between border-b border-slate-800 pb-2">
+              <div className="flex justify-between border-b border-obsidian-800 pb-2">
                 <span className="text-slate-400">Scheduled Date:</span>
                 <span className="font-bold text-amber-400">{formData.selectedDate} at {formData.selectedTimeSlot}</span>
               </div>
-              <div className="flex justify-between border-b border-slate-800 pb-2">
+              <div className="flex justify-between border-b border-obsidian-800 pb-2">
                 <span className="text-slate-400">Vehicle:</span>
                 <span className="font-bold text-white">{formData.year} {formData.make} {formData.model}</span>
               </div>
-              <div className="flex justify-between border-b border-slate-800 pb-2">
+              <div className="flex justify-between border-b border-obsidian-800 pb-2">
                 <span className="text-slate-400">Location:</span>
                 <span className="font-bold text-white">420 E Main Street, Clayton, NC</span>
               </div>
@@ -758,14 +759,14 @@ export default function AppointmentPage() {
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
               <button
                 onClick={() => window.print()}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-200 bg-obsidian-800 hover:bg-obsidian-750 border border-obsidian-700 transition-colors"
               >
                 <Download className="w-4 h-4" />
                 <span>Print Confirmation</span>
               </button>
               <Link
                 to="/"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl text-xs font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl text-xs font-extrabold text-obsidian-950 bg-amber-400 hover:bg-amber-300 transition-colors"
               >
                 <span>Return to Homepage</span>
               </Link>
@@ -775,17 +776,17 @@ export default function AppointmentPage() {
       </section>
 
       {/* Trust guarantees bar */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-          <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div className="p-4 rounded-2xl bg-obsidian-900 border border-obsidian-800">
             <p className="text-xs font-bold text-white">Zero Pressure Quotes</p>
             <p className="text-[11px] text-slate-400 mt-0.5">Approve only what you want done</p>
           </div>
-          <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div className="p-4 rounded-2xl bg-obsidian-900 border border-obsidian-800">
             <p className="text-xs font-bold text-white">24/7 Key Drop Box</p>
             <p className="text-[11px] text-slate-400 mt-0.5">Early morning or late night drop off</p>
           </div>
-          <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div className="p-4 rounded-2xl bg-obsidian-900 border border-obsidian-800">
             <p className="text-xs font-bold text-white">Digital Multi-Point Check</p>
             <p className="text-[11px] text-slate-400 mt-0.5">Complimentary with every appointment</p>
           </div>
