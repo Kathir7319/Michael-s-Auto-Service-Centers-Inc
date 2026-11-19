@@ -2,16 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Logo({ variant = 'full', size = 'default', className = '' }) {
-  // Sizes: small, default, large
   const isSmall = size === 'small';
   const isLarge = size === 'large';
 
   if (variant === 'icon') {
     return (
-      <Link to="/" className={`inline-flex items-center group ${className}`} aria-label="Clayton Auto Repair Home">
-        <div className="relative flex items-center justify-center">
+      <Link to="/" className={`inline-flex items-center shrink-0 group ${className}`} aria-label="Clayton Auto Repair Home">
+        <div className="relative flex items-center justify-center shrink-0">
           <svg
-            className={`${isSmall ? 'w-8 h-8' : isLarge ? 'w-14 h-14' : 'w-10 h-10'} transition-transform duration-300 group-hover:scale-105`}
+            className={`${isSmall ? 'w-8 h-8' : isLarge ? 'w-12 h-12' : 'w-10 h-10'} transition-transform duration-300 group-hover:scale-105 shrink-0`}
             viewBox="0 0 100 100"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -65,11 +64,11 @@ export default function Logo({ variant = 'full', size = 'default', className = '
   }
 
   return (
-    <Link to="/" className={`inline-flex items-center gap-3 group ${className}`} aria-label="Clayton Auto Repair Home">
+    <Link to="/" className={`inline-flex items-center gap-2.5 shrink-0 whitespace-nowrap group ${className}`} aria-label="Clayton Auto Repair Home">
       {/* Shield Icon Graphic */}
       <div className="relative shrink-0 flex items-center justify-center">
         <svg
-          className={`${isSmall ? 'w-8 h-8' : isLarge ? 'w-13 h-13' : 'w-10 h-10'} transition-transform duration-300 group-hover:scale-105 filter drop-shadow-md`}
+          className={`${isSmall ? 'w-8 h-8' : isLarge ? 'w-12 h-12' : 'w-9 h-9 sm:w-10 sm:h-10'} transition-transform duration-300 group-hover:scale-105 filter drop-shadow-md shrink-0`}
           viewBox="0 0 100 100"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -119,15 +118,15 @@ export default function Logo({ variant = 'full', size = 'default', className = '
         </svg>
       </div>
 
-      {/* Typography */}
-      <div className="flex flex-col">
-        <div className="flex items-center tracking-wider font-extrabold font-heading text-lg sm:text-xl text-white">
+      {/* Typography - Strict single-line, zero wrapping */}
+      <div className="flex flex-col whitespace-nowrap shrink-0">
+        <div className="flex items-center tracking-wider font-extrabold font-heading text-base sm:text-lg text-white leading-tight">
           <span>CLAYTON</span>
-          <span className="text-amber-400 ml-1.5 font-bold">AUTO</span>
-          <span className="text-sky-400 text-xs ml-1 px-1.5 py-0.5 rounded bg-sky-950/80 border border-sky-800/80 font-mono hidden sm:inline-block">REPAIR</span>
+          <span className="text-amber-400 ml-1 font-bold">AUTO</span>
+          <span className="text-sky-400 text-[10px] ml-1.5 px-1.5 py-0.5 rounded bg-sky-950/90 border border-sky-800/80 font-mono tracking-normal">REPAIR</span>
         </div>
-        <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold text-slate-400 tracking-wider uppercase">
-          <span className="text-amber-400/90 font-bold">ASE-CERTIFIED</span>
+        <div className="flex items-center gap-1.5 text-[9.5px] font-bold text-slate-400 tracking-wider uppercase leading-none mt-0.5">
+          <span className="text-amber-400/95">ASE-CERTIFIED</span>
           <span className="text-slate-600">•</span>
           <span className="text-slate-300">HISTORIC DOWNTOWN</span>
         </div>
