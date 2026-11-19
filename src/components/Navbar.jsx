@@ -8,9 +8,7 @@ import {
   Menu, 
   X, 
   ShieldCheck, 
-  Award,
-  ChevronRight,
-  Sparkles
+  ChevronRight
 } from 'lucide-react';
 import Logo from './Logo';
 import { COMPANY_INFO } from '../data/servicesData';
@@ -64,8 +62,8 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full select-none transition-all duration-300">
-      {/* Top Notification / Trust Bar */}
-      <div className="bg-obsidian-950/95 text-slate-300 text-xs border-b border-obsidian-800/80 backdrop-blur-md hidden md:block">
+      {/* Top Notification / Trust Bar - Pure Carbon with Gold & Red accents */}
+      <div className="bg-carbon-950/95 text-zinc-300 text-xs border-b border-carbon-800/80 backdrop-blur-md hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
           <div className="flex items-center space-x-6 whitespace-nowrap shrink-0">
             <a 
@@ -75,11 +73,11 @@ export default function Navbar() {
               className="flex items-center gap-1.5 hover:text-amber-400 transition-colors whitespace-nowrap"
             >
               <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span className="font-medium text-slate-200">420 E Main Street, Historic Downtown Clayton</span>
+              <span className="font-medium text-zinc-200">420 E Main Street, Historic Downtown Clayton</span>
             </a>
-            <div className="flex items-center gap-1.5 text-slate-400 whitespace-nowrap">
-              <Clock className="w-3.5 h-3.5 text-sky-400 shrink-0" />
-              <span>Mon–Fri 7:30 AM–5:30 PM <span className="text-amber-400/95 font-semibold">• Inspections Cut Off 4:30 PM</span></span>
+            <div className="flex items-center gap-1.5 text-zinc-400 whitespace-nowrap">
+              <Clock className="w-3.5 h-3.5 text-racing-400 shrink-0" />
+              <span>Mon–Fri 7:30 AM–5:30 PM <span className="text-amber-400 font-semibold">• Inspections Cut Off 4:30 PM</span></span>
             </div>
           </div>
 
@@ -90,9 +88,9 @@ export default function Navbar() {
             </div>
             <a 
               href={`tel:${COMPANY_INFO.phoneRaw}`} 
-              className="flex items-center gap-1.5 font-bold text-white hover:text-amber-400 transition-colors group whitespace-nowrap"
+              className="flex items-center gap-1.5 font-bold text-white hover:text-racing-400 transition-colors group whitespace-nowrap"
             >
-              <Phone className="w-3.5 h-3.5 text-amber-400 group-hover:rotate-12 transition-transform shrink-0" />
+              <Phone className="w-3.5 h-3.5 text-racing-500 group-hover:rotate-12 transition-transform shrink-0" />
               <span>(919) 553-7300</span>
             </a>
           </div>
@@ -102,28 +100,28 @@ export default function Navbar() {
       {/* Main Navbar Bar */}
       <div className={`transition-all duration-300 ${
         scrolled 
-          ? 'bg-obsidian-900/95 backdrop-blur-xl shadow-2xl border-b border-obsidian-800/90 py-2.5' 
-          : 'bg-obsidian-900/90 backdrop-blur-lg border-b border-white/5 py-3'
+          ? 'bg-carbon-900/95 backdrop-blur-xl shadow-2xl border-b border-carbon-800/90 py-2.5' 
+          : 'bg-carbon-900/90 backdrop-blur-lg border-b border-white/5 py-3'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4">
             
-            {/* Logo (Shrink-0, Never Wraps) */}
+            {/* Logo */}
             <div className="shrink-0 flex items-center">
               <Logo />
             </div>
 
-            {/* Desktop Navigation Links (Strict single-line, zero wrapping) */}
+            {/* Desktop Navigation Links */}
             <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2 shrink-0">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.name}
                   to={link.path}
                   className={({ isActive }) => `
-                    relative px-3 py-1.5 rounded-xl text-xs xl:text-sm font-semibold transition-all duration-200 inline-flex items-center gap-1.5 whitespace-nowrap shrink-0
+                    relative px-3.5 py-1.5 rounded-xl text-xs xl:text-sm font-semibold transition-all duration-200 inline-flex items-center gap-1.5 whitespace-nowrap shrink-0
                     ${isActive 
-                      ? 'text-amber-400 bg-obsidian-800 border border-amber-500/30 shadow-inner' 
-                      : 'text-slate-300 hover:text-white hover:bg-obsidian-800/50 border border-transparent'}
+                      ? 'text-white bg-racing-600/20 border border-racing-500/50 shadow-inner' 
+                      : 'text-zinc-300 hover:text-white hover:bg-carbon-800/60 border border-transparent'}
                   `}
                 >
                   <span className="whitespace-nowrap">{link.name}</span>
@@ -134,22 +132,22 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* Right Action Section (Strict single-line, zero wrapping) */}
+            {/* Right Action Section */}
             <div className="hidden sm:flex items-center gap-2.5 shrink-0">
               <a
                 href={`tel:${COMPANY_INFO.phoneRaw}`}
-                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-slate-200 hover:text-white bg-obsidian-850 hover:bg-obsidian-800 border border-obsidian-750 transition-all whitespace-nowrap shrink-0"
+                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-zinc-200 hover:text-white bg-carbon-850 hover:bg-carbon-800 border border-carbon-750 transition-all whitespace-nowrap shrink-0"
                 title="Call Clayton Auto Repair"
               >
-                <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <Phone className="w-3.5 h-3.5 text-racing-400 shrink-0" />
                 <span className="whitespace-nowrap">(919) 553-7300</span>
               </a>
 
               <Link
                 to="/appointment"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs xl:text-sm font-extrabold text-obsidian-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:from-amber-300 hover:to-amber-400 shadow-md shadow-amber-500/20 hover:shadow-amber-500/35 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap shrink-0"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs xl:text-sm font-extrabold text-white bg-gradient-to-r from-racing-600 via-racing-500 to-amber-500 hover:from-racing-500 hover:to-amber-400 shadow-md shadow-racing-600/30 hover:shadow-racing-600/50 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap shrink-0"
               >
-                <Calendar className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-obsidian-950 shrink-0" />
+                <Calendar className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-white shrink-0" />
                 <span className="whitespace-nowrap">Book Appointment</span>
               </Link>
             </div>
@@ -158,7 +156,7 @@ export default function Navbar() {
             <div className="flex items-center gap-2 lg:hidden shrink-0">
               <a
                 href={`tel:${COMPANY_INFO.phoneRaw}`}
-                className="p-2 text-amber-400 bg-obsidian-850 rounded-xl border border-obsidian-700 sm:hidden active:scale-95 transition-transform shrink-0"
+                className="p-2 text-racing-400 bg-carbon-850 rounded-xl border border-carbon-700 sm:hidden active:scale-95 transition-transform shrink-0"
                 aria-label="Call Shop"
               >
                 <Phone className="w-4 h-4" />
@@ -167,11 +165,11 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-xl text-slate-300 hover:text-white bg-obsidian-850 border border-obsidian-700 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-colors shrink-0"
+                className="p-2 rounded-xl text-zinc-300 hover:text-white bg-carbon-850 border border-carbon-700 focus:outline-none focus:ring-2 focus:ring-racing-500 transition-colors shrink-0"
                 aria-expanded={mobileMenuOpen}
                 aria-label="Toggle navigation menu"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5 text-amber-400" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? <X className="w-5 h-5 text-racing-400" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
 
@@ -186,16 +184,16 @@ export default function Navbar() {
           onClick={() => setMobileMenuOpen(false)}
         >
           <div 
-            className="fixed inset-y-0 right-0 w-full max-w-sm bg-obsidian-950 border-l border-obsidian-800 shadow-2xl p-6 flex flex-col justify-between overflow-y-auto"
+            className="fixed inset-y-0 right-0 w-full max-w-sm bg-carbon-950 border-l border-carbon-800 shadow-2xl p-6 flex flex-col justify-between overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Drawer Header */}
             <div>
-              <div className="flex items-center justify-between pb-4 border-b border-obsidian-800">
+              <div className="flex items-center justify-between pb-4 border-b border-carbon-800">
                 <Logo size="small" />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-obsidian-800"
+                  className="p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-carbon-800"
                   aria-label="Close menu"
                 >
                   <X className="w-5 h-5" />
@@ -203,7 +201,7 @@ export default function Navbar() {
               </div>
 
               {/* Location Badge */}
-              <div className="mt-4 p-3.5 bg-obsidian-900 rounded-2xl border border-obsidian-800 space-y-1">
+              <div className="mt-4 p-3.5 bg-carbon-900 rounded-2xl border border-carbon-800 space-y-1">
                 <div className="flex items-center justify-between text-xs">
                   <span className="font-bold text-amber-400 flex items-center gap-1.5 whitespace-nowrap">
                     <MapPin className="w-3.5 h-3.5 shrink-0" />
@@ -213,7 +211,7 @@ export default function Navbar() {
                     NC Station
                   </span>
                 </div>
-                <p className="text-xs text-slate-300">420 E Main Street • Drop off & walk to cafes</p>
+                <p className="text-xs text-zinc-300">420 E Main Street • Drop off & walk to cafes</p>
               </div>
 
               {/* Navigation Links */}
@@ -225,8 +223,8 @@ export default function Navbar() {
                     className={({ isActive }) => `
                       flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all whitespace-nowrap
                       ${isActive 
-                        ? 'text-amber-400 bg-obsidian-900 border border-amber-500/30 font-bold shadow-md' 
-                        : 'text-slate-200 hover:bg-obsidian-900/60 hover:text-white'}
+                        ? 'text-white bg-racing-600/20 border border-racing-500/50 font-bold shadow-md' 
+                        : 'text-zinc-200 hover:bg-carbon-900/60 hover:text-white'}
                     `}
                   >
                     <span className="flex items-center gap-2 whitespace-nowrap">
@@ -235,31 +233,31 @@ export default function Navbar() {
                         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
                       )}
                     </span>
-                    <ChevronRight className="w-4 h-4 text-slate-500 shrink-0" />
+                    <ChevronRight className="w-4 h-4 text-zinc-500 shrink-0" />
                   </NavLink>
                 ))}
               </nav>
             </div>
 
             {/* Drawer Bottom Actions */}
-            <div className="mt-8 space-y-3 pt-5 border-t border-obsidian-800">
+            <div className="mt-8 space-y-3 pt-5 border-t border-carbon-800">
               <Link
                 to="/appointment"
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-extrabold text-obsidian-950 bg-gradient-to-r from-amber-400 to-amber-500 shadow-xl shadow-amber-500/25 active:scale-95 transition-transform whitespace-nowrap"
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-extrabold text-white bg-gradient-to-r from-racing-600 via-racing-500 to-amber-500 shadow-xl shadow-racing-600/30 active:scale-95 transition-transform whitespace-nowrap"
               >
-                <Calendar className="w-4 h-4 text-obsidian-950 shrink-0" />
+                <Calendar className="w-4 h-4 text-white shrink-0" />
                 <span className="whitespace-nowrap">Book Appointment Online</span>
               </Link>
 
               <a
                 href={`tel:${COMPANY_INFO.phoneRaw}`}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-semibold text-white bg-obsidian-850 hover:bg-obsidian-800 border border-obsidian-700 transition-colors whitespace-nowrap"
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-semibold text-white bg-carbon-850 hover:bg-carbon-800 border border-carbon-700 transition-colors whitespace-nowrap"
               >
-                <Phone className="w-4 h-4 text-amber-400 shrink-0" />
+                <Phone className="w-4 h-4 text-racing-400 shrink-0" />
                 <span className="whitespace-nowrap">Call (919) 553-7300</span>
               </a>
 
-              <p className="text-[11px] text-center text-slate-400 pt-2 leading-relaxed">
+              <p className="text-[11px] text-center text-zinc-400 pt-2 leading-relaxed">
                 Mon–Fri 7:30 AM–5:30 PM • Inspections Cut Off 4:30 PM
               </p>
             </div>

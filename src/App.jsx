@@ -33,16 +33,16 @@ function FloatingMobileCTA() {
     <div className="fixed bottom-4 right-4 z-40 sm:hidden flex items-center gap-2 animate-fadeIn">
       <a
         href={`tel:${COMPANY_INFO.phoneRaw}`}
-        className="p-3.5 rounded-full bg-obsidian-900 border border-obsidian-700 text-amber-400 shadow-2xl flex items-center justify-center active:scale-95 transition-transform"
+        className="p-3.5 rounded-full bg-carbon-900 border border-carbon-700 text-racing-400 shadow-2xl flex items-center justify-center active:scale-95 transition-transform"
         aria-label="Call Shop"
       >
         <Phone className="w-5 h-5" />
       </a>
       <Link
         to="/appointment"
-        className="flex items-center gap-2 px-5 py-3.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-obsidian-950 font-extrabold text-xs shadow-xl shadow-amber-500/35 active:scale-95 transition-transform"
+        className="flex items-center gap-2 px-5 py-3.5 rounded-full bg-gradient-to-r from-racing-600 via-racing-500 to-amber-500 text-white font-extrabold text-xs shadow-xl shadow-racing-600/35 active:scale-95 transition-transform"
       >
-        <Calendar className="w-4 h-4 text-obsidian-950" />
+        <Calendar className="w-4 h-4 text-white" />
         <span>Book Bay Slot</span>
       </Link>
     </div>
@@ -53,7 +53,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-obsidian-950 text-slate-100 font-sans selection:bg-amber-400 selection:text-obsidian-950">
+      <div className="min-h-screen flex flex-col bg-carbon-950 text-zinc-100 font-sans selection:bg-racing-600 selection:text-white">
         <Navbar />
         <main className="flex-grow">
           <Routes>

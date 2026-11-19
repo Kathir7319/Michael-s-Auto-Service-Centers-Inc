@@ -17,9 +17,7 @@ import {
   ArrowRight,
   Coffee,
   Sparkles,
-  Car,
-  Compass,
-  Check
+  Car
 } from 'lucide-react';
 import { 
   COMPANY_INFO, 
@@ -33,28 +31,28 @@ export default function HomePage() {
   const getIcon = (iconName) => {
     switch (iconName) {
       case 'ShieldAlert':
-        return <ShieldCheck className="w-6 h-6 text-sky-400" />;
+        return <ShieldCheck className="w-6 h-6 text-racing-500" />;
       case 'Droplets':
         return <Droplets className="w-6 h-6 text-amber-400" />;
       case 'CheckCircle2':
         return <CheckCircle2 className="w-6 h-6 text-emerald-400" />;
       case 'ThermometerSnowflake':
-        return <ThermometerSnowflake className="w-6 h-6 text-sky-400" />;
+        return <ThermometerSnowflake className="w-6 h-6 text-racing-400" />;
       case 'Cpu':
-        return <Cpu className="w-6 h-6 text-indigo-400" />;
+        return <Cpu className="w-6 h-6 text-amber-500" />;
       default:
-        return <Wrench className="w-6 h-6 text-amber-400" />;
+        return <Wrench className="w-6 h-6 text-racing-500" />;
     }
   };
 
   return (
-    <div className="space-y-20 lg:space-y-32 overflow-hidden bg-obsidian-950 text-slate-100">
+    <div className="space-y-20 lg:space-y-32 overflow-hidden bg-carbon-950 text-zinc-100">
       
       {/* HERO SECTION */}
-      <section className="relative pt-12 pb-24 lg:pt-20 lg:pb-36 bg-mesh-dark border-b border-obsidian-800/80">
-        {/* Ambient lighting */}
-        <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-r from-sky-500/15 via-amber-500/10 to-sky-600/10 blur-[120px] pointer-events-none rounded-full" />
-        <div className="absolute -top-20 right-0 w-96 h-96 bg-amber-500/10 blur-3xl pointer-events-none rounded-full" />
+      <section className="relative pt-12 pb-24 lg:pt-20 lg:pb-36 bg-mesh-dark border-b border-carbon-800/80">
+        {/* Ambient lighting - Red & Warm Gold */}
+        <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-r from-racing-600/15 via-amber-500/10 to-racing-700/10 blur-[120px] pointer-events-none rounded-full" />
+        <div className="absolute -top-20 right-0 w-96 h-96 bg-racing-500/10 blur-3xl pointer-events-none rounded-full" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -62,24 +60,24 @@ export default function HomePage() {
             {/* Left Column: Headlines & CTAs */}
             <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
               {/* Location Tag Badge */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-obsidian-900/90 border border-amber-500/30 text-xs sm:text-sm text-slate-200 shadow-glass">
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-carbon-900/90 border border-racing-500/30 text-xs sm:text-sm text-zinc-200 shadow-glass">
                 <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span className="font-bold text-amber-400 tracking-wide">Historic Downtown Clayton</span>
-                <span className="text-obsidian-700">•</span>
-                <span className="text-slate-300 font-medium">420 E Main Street</span>
+                <span className="text-zinc-600">•</span>
+                <span className="text-zinc-300 font-medium">420 E Main Street</span>
               </div>
 
               {/* Main Headline (Word Document verbatim) */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-[1.12]">
                 Honest Auto Repair with{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-sky-300">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-racing-500 via-amber-400 to-amber-200">
                   Small-Town Roots
                 </span>{' '}
                 in Historic Downtown Clayton
               </h1>
 
               {/* Subheadline (Word Document verbatim) */}
-              <p className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
+              <p className="text-base sm:text-lg lg:text-xl text-zinc-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
                 ASE-certified technicians keeping your family safe on the road since day one. Quality you can trust, convenience you deserve.
               </p>
 
@@ -87,47 +85,47 @@ export default function HomePage() {
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <Link
                   to="/appointment"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-base font-extrabold text-obsidian-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:from-amber-300 hover:to-amber-400 shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-base font-extrabold text-white bg-gradient-to-r from-racing-600 via-racing-500 to-amber-500 hover:from-racing-500 hover:to-amber-400 shadow-xl shadow-racing-600/30 hover:shadow-racing-600/50 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
                 >
-                  <Calendar className="w-5 h-5 text-obsidian-950" />
+                  <Calendar className="w-5 h-5 text-white" />
                   <span>Book an Appointment Online</span>
                 </Link>
 
                 <Link
                   to="/nc-inspections"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-base font-semibold text-slate-200 bg-obsidian-900/90 hover:bg-obsidian-850 border border-obsidian-700/80 hover:border-sky-500/40 shadow-lg hover:shadow-sky-500/10 transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-base font-semibold text-zinc-200 bg-carbon-900/90 hover:bg-carbon-850 border border-carbon-700/80 hover:border-racing-500/40 shadow-lg hover:shadow-racing-500/10 transition-all"
                 >
-                  <Clock className="w-5 h-5 text-sky-400" />
+                  <Clock className="w-5 h-5 text-racing-400" />
                   <span>View Inspection Hours</span>
                 </Link>
               </div>
 
               {/* Key Highlights Bar */}
-              <div className="pt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 border-t border-obsidian-800/80 max-w-xl mx-auto lg:mx-0">
-                <div className="p-3 rounded-2xl bg-obsidian-900/80 border border-obsidian-800 text-left shadow-sm">
+              <div className="pt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 border-t border-carbon-800/80 max-w-xl mx-auto lg:mx-0">
+                <div className="p-3.5 rounded-2xl bg-carbon-900/80 border border-carbon-800 text-left shadow-sm">
                   <div className="flex items-center gap-1 text-amber-400">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
                     ))}
                   </div>
                   <p className="text-xs font-bold text-white mt-1.5">4.9 / 5.0 Rating</p>
-                  <p className="text-[11px] text-slate-400">380+ Verified Reviews</p>
+                  <p className="text-[11px] text-zinc-400">380+ Verified Reviews</p>
                 </div>
 
-                <div className="p-3 rounded-2xl bg-obsidian-900/80 border border-obsidian-800 text-left shadow-sm">
-                  <div className="flex items-center gap-1 text-sky-400 font-bold text-xs">
+                <div className="p-3.5 rounded-2xl bg-carbon-900/80 border border-carbon-800 text-left shadow-sm">
+                  <div className="flex items-center gap-1 text-racing-400 font-bold text-xs">
                     <Award className="w-4 h-4" /> ASE-Certified
                   </div>
                   <p className="text-xs font-bold text-white mt-1.5">Master Technicians</p>
-                  <p className="text-[11px] text-slate-400">Zero Guesswork Repairs</p>
+                  <p className="text-[11px] text-zinc-400">Zero Guesswork Repairs</p>
                 </div>
 
-                <div className="p-3 rounded-2xl bg-obsidian-900/80 border border-obsidian-800 text-left shadow-sm col-span-2 sm:col-span-1">
+                <div className="p-3.5 rounded-2xl bg-carbon-900/80 border border-carbon-800 text-left shadow-sm col-span-2 sm:col-span-1">
                   <div className="flex items-center gap-1 text-emerald-400 font-bold text-xs">
                     <ShieldCheck className="w-4 h-4" /> NC Station
                   </div>
                   <p className="text-xs font-bold text-white mt-1.5">Safety & Emissions</p>
-                  <p className="text-[11px] text-slate-400">Cut Off 4:30 PM Sharp</p>
+                  <p className="text-[11px] text-zinc-400">Cut Off 4:30 PM Sharp</p>
                 </div>
               </div>
             </div>
@@ -137,12 +135,12 @@ export default function HomePage() {
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 
                 {/* Visual Glassmorphic Card */}
-                <div className="relative rounded-3xl p-6 sm:p-8 bg-obsidian-900/90 backdrop-blur-2xl border border-obsidian-750 shadow-2xl space-y-6">
+                <div className="relative rounded-3xl p-6 sm:p-8 bg-carbon-900/90 backdrop-blur-2xl border border-carbon-750 shadow-2xl space-y-6">
                   {/* Card Header */}
-                  <div className="flex items-center justify-between pb-4 border-b border-obsidian-800">
+                  <div className="flex items-center justify-between pb-4 border-b border-carbon-800">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 p-0.5 flex items-center justify-center shadow-lg shadow-amber-500/20">
-                        <Wrench className="w-6 h-6 text-obsidian-950 font-bold" />
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-racing-500 to-racing-700 p-0.5 flex items-center justify-center shadow-lg shadow-racing-600/30">
+                        <Wrench className="w-6 h-6 text-white font-bold" />
                       </div>
                       <div>
                         <h2 className="text-base font-extrabold text-white font-heading">Clayton Auto Repair</h2>
@@ -157,27 +155,27 @@ export default function HomePage() {
 
                   {/* Highlights List */}
                   <div className="space-y-3.5">
-                    <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-obsidian-950/70 border border-obsidian-800/80">
+                    <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-carbon-950/70 border border-carbon-800/80">
                       <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                       <div>
                         <p className="text-sm font-bold text-white">Walkable While You Wait</p>
-                        <p className="text-xs text-slate-400">Stroll to Boulevard West Coffee and Clayton Bakery just steps away.</p>
+                        <p className="text-xs text-zinc-400">Stroll to Boulevard West Coffee and Clayton Bakery just steps away.</p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-obsidian-950/70 border border-obsidian-800/80">
+                    <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-carbon-950/70 border border-carbon-800/80">
                       <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                       <div>
                         <p className="text-sm font-bold text-white">Live SMS Progress Updates</p>
-                        <p className="text-xs text-slate-400">Receive digital inspections with clear photos and transparent quotes.</p>
+                        <p className="text-xs text-zinc-400">Receive digital inspections with clear photos and transparent quotes.</p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-obsidian-950/70 border border-obsidian-800/80">
-                      <CheckCircle2 className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-carbon-950/70 border border-carbon-800/80">
+                      <CheckCircle2 className="w-5 h-5 text-racing-400 shrink-0 mt-0.5" />
                       <div>
                         <p className="text-sm font-bold text-white">NC State Inspection Station</p>
-                        <p className="text-xs text-slate-400">Fast computerized emissions & safety testing. Cut off strictly at 4:30 PM.</p>
+                        <p className="text-xs text-zinc-400">Fast computerized emissions & safety testing. Cut off strictly at 4:30 PM.</p>
                       </div>
                     </div>
                   </div>
@@ -186,22 +184,22 @@ export default function HomePage() {
                   <div className="pt-2">
                     <Link
                       to="/appointment"
-                      className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl text-sm font-extrabold text-obsidian-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 transition-all shadow-md"
+                      className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-racing-600 via-racing-500 to-amber-500 hover:from-racing-500 hover:to-amber-400 transition-all shadow-md"
                     >
-                      <Calendar className="w-4 h-4" />
+                      <Calendar className="w-4 h-4 text-white" />
                       <span>Select Service & Time Slot</span>
                     </Link>
                   </div>
                 </div>
 
                 {/* Floating badge for Downtown charm */}
-                <div className="absolute -bottom-5 -left-4 sm:-bottom-6 sm:-left-6 p-4 rounded-2xl bg-obsidian-950/95 border border-amber-500/40 shadow-2xl flex items-center gap-3">
+                <div className="absolute -bottom-5 -left-4 sm:-bottom-6 sm:-left-6 p-4 rounded-2xl bg-carbon-950/95 border border-amber-500/40 shadow-2xl flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center">
                     <Coffee className="w-5 h-5" />
                   </div>
                   <div className="text-xs">
                     <p className="font-extrabold text-white">Historic Clayton District</p>
-                    <p className="text-slate-400">Coffee & shops 2 mins away</p>
+                    <p className="text-zinc-400">Coffee & shops 2 mins away</p>
                   </div>
                 </div>
 
@@ -215,21 +213,21 @@ export default function HomePage() {
       {/* WHY CHOOSE US SECTION (Word Document verbatim) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-obsidian-900 border border-obsidian-800 text-xs font-bold text-amber-400 uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-carbon-900 border border-carbon-800 text-xs font-bold text-amber-400 uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             The Clayton Standard
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
             Why Choose Clayton Auto Repair?
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="text-zinc-400 text-base sm:text-lg">
             Old-school small-town integrity backed by advanced digital diagnostic technology.
           </p>
         </div>
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1: Downtown Heritage */}
-          <div className="rounded-3xl p-8 bg-obsidian-900/80 border border-obsidian-800 hover:border-amber-500/40 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 group">
+          <div className="rounded-3xl p-8 bg-carbon-900/80 border border-carbon-800 hover:border-amber-500/40 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 group">
             <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
               <MapPin className="w-7 h-7" />
             </div>
@@ -239,37 +237,37 @@ export default function HomePage() {
             <h3 className="text-xl font-bold font-heading text-white mt-2 mb-3">
               {WHY_CHOOSE_US[0].title}
             </h3>
-            <p className="text-slate-300 text-sm leading-relaxed mb-4">
+            <p className="text-zinc-300 text-sm leading-relaxed mb-4">
               {WHY_CHOOSE_US[0].desc}
             </p>
-            <div className="pt-3 border-t border-obsidian-800 flex items-center gap-2 text-xs text-amber-400 font-semibold">
+            <div className="pt-3 border-t border-carbon-800 flex items-center gap-2 text-xs text-amber-400 font-semibold">
               <Coffee className="w-3.5 h-3.5" />
               <span>Boulevard West Coffee just 200 yards away</span>
             </div>
           </div>
 
           {/* Card 2: No Phone Tag */}
-          <div className="rounded-3xl p-8 bg-obsidian-900/80 border border-obsidian-800 hover:border-sky-500/40 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 group">
-            <div className="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 mb-6 group-hover:scale-110 transition-transform">
+          <div className="rounded-3xl p-8 bg-carbon-900/80 border border-carbon-800 hover:border-racing-500/40 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 group">
+            <div className="w-14 h-14 rounded-2xl bg-racing-500/10 border border-racing-500/30 flex items-center justify-center text-racing-400 mb-6 group-hover:scale-110 transition-transform">
               <Calendar className="w-7 h-7" />
             </div>
-            <span className="text-xs font-bold text-sky-400 uppercase tracking-wider">
+            <span className="text-xs font-bold text-racing-400 uppercase tracking-wider">
               {WHY_CHOOSE_US[1].highlight}
             </span>
             <h3 className="text-xl font-bold font-heading text-white mt-2 mb-3">
               {WHY_CHOOSE_US[1].title}
             </h3>
-            <p className="text-slate-300 text-sm leading-relaxed mb-4">
+            <p className="text-zinc-300 text-sm leading-relaxed mb-4">
               {WHY_CHOOSE_US[1].desc}
             </p>
-            <div className="pt-3 border-t border-obsidian-800 flex items-center gap-2 text-xs text-sky-400 font-semibold">
+            <div className="pt-3 border-t border-carbon-800 flex items-center gap-2 text-xs text-racing-400 font-semibold">
               <CheckCircle2 className="w-3.5 h-3.5" />
               <span>Direct online scheduling with SMS confirmation</span>
             </div>
           </div>
 
           {/* Card 3: Certified Experts */}
-          <div className="rounded-3xl p-8 bg-obsidian-900/80 border border-obsidian-800 hover:border-emerald-500/40 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 group">
+          <div className="rounded-3xl p-8 bg-carbon-900/80 border border-carbon-800 hover:border-emerald-500/40 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 group">
             <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
               <Award className="w-7 h-7" />
             </div>
@@ -279,10 +277,10 @@ export default function HomePage() {
             <h3 className="text-xl font-bold font-heading text-white mt-2 mb-3">
               {WHY_CHOOSE_US[2].title}
             </h3>
-            <p className="text-slate-300 text-sm leading-relaxed mb-4">
+            <p className="text-zinc-300 text-sm leading-relaxed mb-4">
               {WHY_CHOOSE_US[2].desc}
             </p>
-            <div className="pt-3 border-t border-obsidian-800 flex items-center gap-2 text-xs text-emerald-400 font-semibold">
+            <div className="pt-3 border-t border-carbon-800 flex items-center gap-2 text-xs text-emerald-400 font-semibold">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Dealer-level diagnostic scanners & tools</span>
             </div>
@@ -292,22 +290,22 @@ export default function HomePage() {
 
       {/* CORE SERVICES OVERVIEW GRID (Word Document verbatim) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-obsidian-800">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-carbon-800">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-racing-500 uppercase tracking-wider mb-2">
               <Wrench className="w-4 h-4" />
               Precision Service Catalog
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
               Core Services Overview Grid
             </h2>
-            <p className="text-slate-400 text-base max-w-xl mt-2">
+            <p className="text-zinc-400 text-base max-w-xl mt-2">
               From everyday preventative care to complex diagnostic troubleshooting on all domestic and import vehicles.
             </p>
           </div>
           <Link
             to="/services"
-            className="inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 group"
+            className="inline-flex items-center gap-2 text-sm font-bold text-racing-400 hover:text-racing-300 group"
           >
             <span>Explore All Maintenance Services</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -319,29 +317,29 @@ export default function HomePage() {
           {CORE_SERVICES.slice(0, 4).map((service) => (
             <div
               key={service.id}
-              className="rounded-3xl p-6 sm:p-7 bg-obsidian-900/90 border border-obsidian-800 hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-2xl"
+              className="rounded-3xl p-6 sm:p-7 bg-carbon-900/90 border border-carbon-800 hover:border-racing-500/40 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:shadow-2xl"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="p-3.5 rounded-2xl bg-obsidian-850 border border-obsidian-750 group-hover:scale-105 transition-transform">
+                  <div className="p-3.5 rounded-2xl bg-carbon-850 border border-carbon-750 group-hover:scale-105 transition-transform">
                     {getIcon(service.icon)}
                   </div>
-                  <span className="text-[10px] font-bold text-amber-400/90 uppercase tracking-wider bg-obsidian-800 px-2 py-0.5 rounded-full border border-obsidian-700">
+                  <span className="text-[10px] font-bold text-amber-400 uppercase tracking-wider bg-carbon-800 px-2.5 py-0.5 rounded-full border border-carbon-700">
                     {service.category}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold font-heading text-white group-hover:text-amber-400 transition-colors">
+                <h3 className="text-lg font-bold font-heading text-white group-hover:text-racing-400 transition-colors">
                   {service.title}
                 </h3>
 
                 {/* Core short description from document */}
-                <p className="text-slate-300 text-sm leading-relaxed">
+                <p className="text-zinc-300 text-sm leading-relaxed">
                   {service.shortDesc}
                 </p>
 
                 {/* Features bullets */}
-                <ul className="space-y-2 pt-3 border-t border-obsidian-800 text-xs text-slate-400">
+                <ul className="space-y-2 pt-3 border-t border-carbon-800 text-xs text-zinc-400">
                   {service.features.slice(0, 2).map((feat, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <span className="text-emerald-400 font-bold">✓</span>
@@ -351,18 +349,18 @@ export default function HomePage() {
                 </ul>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-obsidian-800 flex items-center justify-between">
+              <div className="pt-6 mt-6 border-t border-carbon-800 flex items-center justify-between">
                 <Link
                   to={`/services#${service.id}`}
-                  className="text-xs font-bold text-sky-400 hover:text-sky-300 flex items-center gap-1 group-hover:gap-1.5 transition-all"
+                  className="text-xs font-bold text-zinc-300 hover:text-white flex items-center gap-1 group-hover:gap-1.5 transition-all"
                 >
                   <span>Scope & Details</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 text-racing-400" />
                 </Link>
 
                 <Link
                   to={`/appointment?service=${service.id}`}
-                  className="px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-400/10 text-amber-400 hover:bg-amber-400 hover:text-obsidian-950 transition-colors"
+                  className="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-racing-500/15 text-racing-400 hover:bg-racing-600 hover:text-white transition-colors"
                 >
                   Book Slot
                 </Link>
@@ -374,7 +372,7 @@ export default function HomePage() {
 
       {/* DOWNTOWN CLAYTON SPOTLIGHT */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-obsidian-900 via-obsidian-900 to-obsidian-950 border border-obsidian-800 relative overflow-hidden shadow-2xl">
+        <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-carbon-900 via-carbon-900 to-carbon-950 border border-carbon-800 relative overflow-hidden shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             <div className="lg:col-span-6 space-y-5">
@@ -385,14 +383,14 @@ export default function HomePage() {
 
               <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
                 No Waiting Room Traps. <br />
-                <span className="text-amber-400">Historic Clayton</span> Is At Your Doorstep.
+                <span className="text-racing-500">Historic Clayton</span> Is At Your Doorstep.
               </h2>
 
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
                 Located at <strong>420 E Main Street</strong>, drop off your vehicle for routine maintenance or an NC inspection, and stroll to Clayton's finest cafes, bakeries, and boutiques. We will send an SMS update when your car is ready!
               </p>
 
-              <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-medium text-slate-300">
+              <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-medium text-zinc-300">
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Free Wi-Fi Customer Lounge
                 </span>
@@ -404,13 +402,13 @@ export default function HomePage() {
 
             <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {DOWNTOWN_WALKABLE_SPOTS.map((spot, i) => (
-                <div key={i} className="p-4 rounded-2xl bg-obsidian-950/80 border border-obsidian-800 space-y-1.5 hover:border-amber-500/30 transition-colors">
+                <div key={i} className="p-4 rounded-2xl bg-carbon-950/80 border border-carbon-800 space-y-1.5 hover:border-racing-500/30 transition-colors">
                   <div className="flex items-center justify-between text-xs">
                     <span className="font-bold text-white">{spot.name}</span>
                     <span className="text-amber-400 font-bold text-[11px]">{spot.distance}</span>
                   </div>
-                  <p className="text-[11px] text-sky-400 font-semibold">{spot.category}</p>
-                  <p className="text-xs text-slate-400 leading-snug">{spot.desc}</p>
+                  <p className="text-[11px] text-racing-400 font-semibold">{spot.category}</p>
+                  <p className="text-xs text-zinc-400 leading-snug">{spot.desc}</p>
                 </div>
               ))}
             </div>
@@ -431,29 +429,29 @@ export default function HomePage() {
           <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
             Trusted by Clayton Drivers
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
+          <p className="text-zinc-400 text-sm sm:text-base">
             Honest service and clear quotes keep our neighbors coming back.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {TESTIMONIALS.map((t, idx) => (
-            <div key={idx} className="rounded-3xl p-7 bg-obsidian-900/80 border border-obsidian-800 flex flex-col justify-between shadow-xl hover:border-obsidian-700 transition-all">
+            <div key={idx} className="rounded-3xl p-7 bg-carbon-900/80 border border-carbon-800 flex flex-col justify-between shadow-xl hover:border-carbon-700 transition-all">
               <div className="space-y-3.5">
                 <div className="flex items-center gap-1 text-amber-400">
                   {[...Array(t.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-amber-400" />
                   ))}
                 </div>
-                <p className="text-slate-300 text-sm leading-relaxed italic">
+                <p className="text-zinc-300 text-sm leading-relaxed italic">
                   "{t.review}"
                 </p>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-obsidian-800">
+              <div className="pt-6 mt-6 border-t border-carbon-800">
                 <p className="font-bold text-white text-sm">{t.name}</p>
-                <p className="text-xs text-slate-400">{t.location}</p>
-                <span className="inline-block mt-2 text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-obsidian-950 border border-amber-500/30 px-2.5 py-0.5 rounded-full">
+                <p className="text-xs text-zinc-400">{t.location}</p>
+                <span className="inline-block mt-2 text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-carbon-950 border border-amber-500/30 px-2.5 py-0.5 rounded-full">
                   {t.service}
                 </span>
               </div>
@@ -464,9 +462,9 @@ export default function HomePage() {
 
       {/* FINAL APPOINTMENT CTA BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
-        <div className="rounded-3xl p-8 sm:p-14 bg-gradient-to-r from-obsidian-900 via-obsidian-850 to-obsidian-900 border border-amber-500/30 shadow-2xl relative overflow-hidden text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-obsidian-950 border border-amber-500/40 text-xs font-bold text-amber-400 uppercase tracking-wider">
-            <Calendar className="w-4 h-4" />
+        <div className="rounded-3xl p-8 sm:p-14 bg-gradient-to-r from-carbon-900 via-carbon-850 to-carbon-900 border border-racing-500/30 shadow-2xl relative overflow-hidden text-center space-y-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-carbon-950 border border-racing-500/40 text-xs font-bold text-amber-400 uppercase tracking-wider">
+            <Calendar className="w-4 h-4 text-amber-400" />
             No Phone Tag • Direct Online Booking
           </div>
 
@@ -474,24 +472,24 @@ export default function HomePage() {
             Ready to Experience Honest, Friendly Auto Care in Clayton?
           </h2>
 
-          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-zinc-300 text-base sm:text-lg max-w-2xl mx-auto">
             Skip the hold music. Pick your exact date, time, and service window online in under 90 seconds. Our service advisor will text your confirmation right away.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/appointment"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-extrabold text-obsidian-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 shadow-xl shadow-amber-500/25 transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-extrabold text-white bg-gradient-to-r from-racing-600 via-racing-500 to-amber-500 hover:from-racing-500 hover:to-amber-400 shadow-xl shadow-racing-600/30 transition-all"
             >
-              <Calendar className="w-5 h-5 text-obsidian-950" />
+              <Calendar className="w-5 h-5 text-white" />
               <span>Book an Appointment Online</span>
             </Link>
 
             <a
               href={`tel:${COMPANY_INFO.phoneRaw}`}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-semibold text-white bg-obsidian-800 hover:bg-obsidian-750 border border-obsidian-700 transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-base font-semibold text-white bg-carbon-800 hover:bg-carbon-750 border border-carbon-700 transition-colors"
             >
-              <Phone className="w-5 h-5 text-amber-400" />
+              <Phone className="w-5 h-5 text-racing-400" />
               <span>Call (919) 553-7300</span>
             </a>
           </div>
