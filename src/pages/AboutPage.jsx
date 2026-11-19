@@ -6,7 +6,8 @@ import {
   ShieldCheck, 
   Heart, 
   Coffee, 
-  Clock
+  Clock,
+  Calendar
 } from 'lucide-react';
 import { COMPANY_INFO, DOWNTOWN_WALKABLE_SPOTS } from '../data/servicesData';
 
