@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import confetti from 'canvas-confetti';
 import { 
   Calendar as CalendarIcon, 
   Clock, 
@@ -171,17 +170,6 @@ export default function AppointmentPage() {
     const code = `CAR-${randomNum}`;
     setConfirmationCode(code);
     setIsSubmitted(true);
-
-    // Trigger celebration confetti
-    try {
-      confetti({
-        particleCount: 120,
-        spread: 80,
-        origin: { y: 0.6 }
-      });
-    } catch (err) {
-      // ignore
-    }
   };
 
   const selectedServiceObj = serviceOptions.find(s => s.id === formData.serviceType) || serviceOptions[0];
